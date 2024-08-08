@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VFLOWS </title>
+</head>
+<body>
+    <h1 id="title">CADASTRO FORNCEDOR/PRODUTO</h1>
+
+    <div id="container">
+
+        <div id="dados-fornecedor">
+            <h2 class="title-div">Dados do Fornecedor</h2>
+
+            <form class="form">
+                <label for="razao-social">Razão Social</label>
+                <input type="text" id="razao-social">
+
+                <label for="cnpj">CNPJ</label>
+                <input type="text" id="cnpj">
+
+                <label for="nome-fantasia">Nome Fantasia</label>
+                <input type="text" id="nome-fantasia">
+
+                <label for="inscricao-estadual">Inscrição Estadual</label>
+                <input type="text" id="inscricao-estadual">
+
+                <label for="cep">CEP</label>
+                <input type="text" id="cep">
+
+                <label for="inscricao-municipal">Inscrição Municipal</label>
+                <input type="text" id="inscricao-municipal">
+
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco">
+
+                <label for="numero">Número</label>
+                <input type="text" id="numero">
+
+                <label for="complemento">Complemento</label>
+                <input type="text" id="complemento">
+
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro">
+
+                <label for="municipio">Município</label>
+                <input type="text" id="municipio">
+
+                <label for="estado">Estado</label>
+                <input type="text" id="estado">
+
+                <label for="nome-pessoa">Nome da Pessoa de Contato</label>
+                <input type="text" id="nome-pessoa">
+
+                <label for="telefone">Telefone</label>
+                <input type="text" id="telefone">
+
+                <label for="email">E-mail</label>
+                <input type="text" id="email">
+            </form>
+        </div>
+
+        <div id="produtos">
+            <h2 class="title-div">Produtos</h2>
+
+            <form class="form">
+                <!-- PRODUTO TESTE -->
+                <p>Produto-1</p>
+
+                <label for="produto">Produto</label>
+                <input type="text" id="produto">
+
+                <label for="medida">UND. Medida</label>
+                <input type="number" id="medida">
+
+                <label for="qtd-estoque">QDTE em Estoque</label>
+                <input type="text" id="qtd-estoque">
+
+                <label for="valor-unitario">Valor Unitário</label>
+                <input type="text" id="valor-unitario">
+
+                <label for="valor-total">Valor Total</label>
+                <input type="text" id="valor-total" disabled="true">
+
+                <button>Adicionar Produto</button>
+            </form>
+        </div>
+
+        <div id="anexos">
+            <h2 class="title-div">Anexos</h2>
+            <form>
+                <p>Itens</p>
+                <button>Incluir Anexo</button>
+            </form>
+        </div>
+
+            <button>Salvar Fornecedor</button>
+
+    </div>
+</body>
+</html>
