@@ -1,104 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VFLOWS </title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VFLOWS</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <h1 id="title">CADASTRO FORNCEDOR/PRODUTO</h1>
 
     <div class="display-flex">
+      <div id="dados-fornecedor" class="div border">
+        <h2 class="title-div">Dados do Fornecedor</h2>
 
-        <div id="dados-fornecedor" class="div border">
-            <h2 class="title-div">Dados do Fornecedor</h2>
+        <form class="form">
+          <div class="container-form-group">
+            <div class="form-group">
+              <label for="razao-social">Razão Social</label>
+              <input type="text" id="razao-social" class="border" />
+            </div>
 
-            <form class="form">
-                <div>
-                    <label for="razao-social">Razão Social</label>
-                    <input type="text" id="razao-social" class="border">
+            <div class="form-group">
+              <label for="cnpj">CNPJ</label>
+              <input type="text" id="cnpj" class="border" />
+            </div>
+          </div>
 
-                    <label for="cnpj">CNPJ</label>
-                    <input type="text" id="cnpj" class="border">
-                </div>
+          <div class="container-form-group">
+            <div class="form-group">
+              <label for="nome-fantasia">Nome Fantasia</label>
+              <input type="text" id="nome-fantasia" class="border" />
+            </div>
 
-                <div>
-                    <label for="nome-fantasia">Nome Fantasia</label>
-                    <input type="text" id="nome-fantasia" class="border">
+            <div class="form-group">
+              <label for="inscricao-estadual">Inscrição Estadual</label>
+              <input type="text" id="inscricao-estadual" class="border" />
+            </div>
+          </div>
 
-                    <label for="inscricao-estadual">Inscrição Estadual</label>
-                    <input type="text" id="inscricao-estadual" class="border">
-                </div>
+          <div class="container-form-group">
+            <div class="form-group">
+              <label for="cep">CEP</label>
+              <input type="text" id="cep" class="border" />
+            </div>
 
-                <div>
-                    <label for="cep">CEP</label>
-                    <input type="text" id="cep" class="border">
+            <div class="form-group">
+              <label for="inscricao-municipal">Inscrição Municipal</label>
+              <input type="text" id="inscricao-municipal" class="border" />
+            </div>
+          </div>
 
-                    <label for="inscricao-municipal">Inscrição Municipal</label>
-                    <input type="text" id="inscricao-municipal" class="border">
-                </div>
+          <div class="container-form-group">
+            <div class="form-group">
+              <label for="endereco">Endereço</label>
+              <input type="text" id="endereco" class="border" />
+            </div>
 
-                <div>
-                    <label for="endereco">Endereço</label>
-                    <input type="text" id="endereco" class="border">
+            <div class="form-group">
+              <label for="numero">Número</label>
+              <input type="text" id="numero" class="border" />
+            </div>
+          </div>
 
-                    <label for="numero">Número</label>
-                    <input type="text" id="numero" class="border">
-                </div>
+          <div class="container-form-group">
+            <div class="form-group">
+              <label for="complemento">Complemento</label>
+              <input type="text" id="complemento" class="border" />
+            </div>
+          </div>
 
-                <div>
-                    <label for="complemento">Complemento</label>
-                    <input type="text" id="complemento" class="border">
-                </div>
+          <div class="container-form-group">
+            <div class="form-group">
+              <label for="bairro">Bairro</label>
+              <input type="text" id="bairro" class="border" />
+            </div>
 
-                <div>
-                    <label for="bairro">Bairro</label>
-                    <input type="text" id="bairro" class="border">
+            <div class="form-group">
+              <label for="municipio">Município</label>
+              <input type="text" id="municipio" class="border" />
+            </div>
 
-                    <label for="municipio">Município</label>
-                    <input type="text" id="municipio" class="border">
+            <div class="form-group">
+              <label for="estado">Estado</label>
+              <input type="text" id="estado" class="border" />
+            </div>
+          </div>
 
-                    <label for="estado">Estado</label>
-                    <input type="text" id="estado" class="border">
-                </div>
+          <div class="container-form-group">
+            <div class="form-group">
+              <label for="nome-pessoa">Nome da Pessoa de Contato</label>
+              <input type="text" id="nome-pessoa" class="border" />
+            </div>
 
-                <div>
-                    <label for="nome-pessoa">Nome da Pessoa de Contato</label>
-                    <input type="text" id="nome-pessoa" class="border">
+            <div class="form-group">
+              <label for="telefone">Telefone</label>
+              <input type="text" id="telefone" class="border" />
+            </div>
 
-                    <label for="telefone">Telefone</label>
-                    <input type="text" id="telefone" class="border">
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="text" id="email" class="border" />
+            </div>
+          </div>
+        </form>
+      </div>
 
-                    <label for="email">E-mail</label>
-                    <input type="text" id="email" class="border">
-                </div>
-            </form>
-        </div>
+      <div id="produtos" class="border div">
+        <h2 class="title-div">Produtos</h2>
 
-        <div id="produtos" class="border div">
-            <h2 class="title-div">Produtos</h2>
+        <form class="form">
+          <p>Produtos</p>
+          <div class="display-flex">
+            <button>Adicionar Produto</button>
+          </div>
+        </form>
+      </div>
 
-            <form class="form">
-                <p>Produtos</p>
-                <div class="display-flex">
-                    <button>Adicionar Produto</button>
-                </div>
-            </form>
-        </div>
+      <div id="anexos" class="border div">
+        <h2 class="title-div">Anexos</h2>
+        <form>
+          <p>Itens</p>
+          <div class="display-flex">
+            <button>Incluir Anexo</button>
+          </div>
+        </form>
+      </div>
 
-        <div id="anexos" class="border div">
-            <h2 class="title-div">Anexos</h2>
-            <form>
-                <p>Itens</p>
-                <div class="display-flex">
-                    <button>Incluir Anexo</button>
-                </div>
-            </form>
-        </div>
-
-            <button>Salvar Fornecedor</button>
-
+      <button>Salvar Fornecedor</button>
     </div>
-</body>
+  </body>
 </html>
