@@ -2,7 +2,8 @@ h1,
 h2,
 form,
 label,
-input {
+input,
+p {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -18,7 +19,7 @@ h2 {
   color: white;
   background-color: dodgerblue;
   margin: 0;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .display-flex {
@@ -29,7 +30,7 @@ h2 {
 
 .border {
   border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .div {
@@ -46,11 +47,30 @@ input {
   margin-bottom: 10px;
 }
 
-button {
+#apagar-produto, #apagar-anexo{
+  background-color: red;
+
+  display: inline;
+  width: 50px;
+  height: 50px;
+  margin: 100px 25px;
+}
+
+#ver-anexo{
+  background-color: dodgerblue;
+
+  display: inline;
+  width: 50px;
+  height: 50px;
+  margin: 100px 25px;
+}
+
+.button-form {
   border: 0;
-  border-radius: 5px;
+  border-radius: 10px;
 
   height: 50px;
+  margin: 10px;
 
   font-size: 20px;
   background-color: rgb(0, 255, 0);
@@ -64,6 +84,29 @@ button {
   margin: 0 20px;
 }
 
+.form-group-anexo {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
 .container-form-group {
   display: flex;
+}
+
+.produto-item{
+  display: flex;
+  margin: 20px;
+}
+
+.produto-item fieldset{
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.produto-item legend{
+  text-align: left;
+  font-size: 20px;
+  width: 500px;
 }
