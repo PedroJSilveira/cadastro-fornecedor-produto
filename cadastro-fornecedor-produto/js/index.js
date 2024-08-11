@@ -1,32 +1,89 @@
 $(document).ready(function() {
-    //validando os dados do forncedor
-    $('#form-fornecedor').validate();
+    // Salvar fornecedor do produto
+    $('#salvar-produto').on('click', function(event) {
+        event.preventDefault();
 
-    let quantidadeProdutos = 0;
+        // Validação dos dados do fornecedor
+        $('#form-fornecedor').validate();
+        if(!$('#form-fornecedor').valid()){
+            alert("Preencha os campos obrigatórior");
+            return;
+        }
 
-    //criando o html para o produto quando o botão adicionar produto e clicado
-    $('#adicionar-produto').on('click', function() {
-        const template = createHtmlProduto(quantidadeProdutos);
-        $('#produto-container').append(template);
-        quantidadeProdutos++;
+        // Verifica se ao menos um produto foi adicionado
+        if ($('#produto-container .produto-item').length === 0) {
+            alert("É obrigatório adicionar pelo menos um produto.");
+            return;
+        }
+
+        // Verifica se ao menos um anexo foi adicionado
+        if ($('#anexos-container .form-group-anexo').length === 0) {
+            alert("É obrigatório adicionar pelo menos um anexo.");
+            return;
+        }
+
+        $('#loading-modal').show();
+
+        // Formata os dados para JSON
+        const fornecedorData = {
+            fornecedor: {
+                razao: $('#razao-social').val(),
+                cnpj: $('#cnpj').val(),
+                nome: $("#nome-fantasia").val(),
+                inscricaoEstadual: $("#inscricao-estadual").val(),
+                cep: $("#cep").val(),
+                inscricaoMunicipal: $("#inscricao-municipal").val(),
+                endereco: $("#endereco").val(),
+                numero: $("#numero").val(),
+                complemento: $("#complemento").val(),
+                bairro: $("#bairro").val(),
+                municipio: $("#municipio").val(),
+                nomePessoa: $("#nome-pressoa").val(),
+                telefone: $("#telefone").val(),
+                email: $("#email").val()
+
+            },
+            produtos: [],
+            anexos: []
+        };
+
+        // Adiciona produtos ao JSON
+        $('#produto-container .produto-item').each(function() {
+            const produtoNome = $(this).find('#produto-nome').val();
+            const produtoUnidade = $(this).find('#produto-unidade').val();
+            const produtoQuantidade = $(this).find('#produto-quantidade').val();
+            const produtoValorUnitario = $(this).find('#produto-valor-unitario').val();
+            const produtoValorTotal = $(this).find('#produto-valor-total').val();
+
+            fornecedorData.produtos.push({
+                nome: produtoNome,
+                unidade: produtoUnidade,
+                quantidade: produtoQuantidade,
+                valorUnitario: produtoValorUnitario,
+                valorTotal: produtoValorTotal
+            });
+        });
+
+        // Adiciona anexos ao JSON
+        for (let i = 0; i < sessionStorage.length; i++) {
+            const anexoKey = sessionStorage.key(i);
+            const anexoBlob = sessionStorage.getItem(anexoKey);
+            fornecedorData.anexos.push({
+                nome: anexoKey,
+                blob: anexoBlob
+            });
+        }
+
+        $('#loading-modal').hide();
+
+        //Baixar JSON
+        const blob = new Blob([JSON.stringify(fornecedorData, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'fornecedor.json';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
     });
-
-    //Recebendo os valores dos inputs dos produtos e colocando o valor total do produto no campo dele
-    $('#produto-container').on('input', '.quantidade, .valor-unitario', function() {
-        const $produtoItem = $(this).closest('.produto-item');
-        const quantidade = parseFloat($produtoItem.find('.quantidade').val()) || 0;
-        const valorUnitario = parseFloat($produtoItem.find('.valor-unitario').val()) || 0;
-        const valorTotal = quantidade * valorUnitario;
-
-        $produtoItem.find('.valor-total').val(valorTotal.toFixed(2));
-    });
-
-    $('#produto-container').on('click', '#apagar-produto', function() {
-        $(this).closest('.produto-item').remove();
-    });
-
-    $('#anexos-container').on('click', '#apagar-anexo', function() {
-        $(this).closest('.form-group-anexo').remove();
-    });
-
 });
